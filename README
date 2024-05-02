@@ -1,0 +1,18 @@
+Heap page
+=========
+Implementation of slotted page structure variant typlically used in heap files.
+
+Tools
+=====
+- gcc
+- gcov
+- lcov
+- valgrind
+
+Make targets
+============
+- test: run tests
+- coverage: run tests with code coverage
+- coverage_report: generate HTML code coverage report
+- valgrind: run tests with valgrind analysis
+- clean: clean output binaries
