@@ -102,6 +102,12 @@ void test_insertReuseDeletedSlot() {
     TEST_ASSERT_EQUAL_INT(218, page->hdr->freespace_end);
     TEST_ASSERT_EQUAL_INT(194, page_get_freespace(page));
 
+    Slot* slot = page_get_slot(page, result.slot_id);
+    TEST_ASSERT_EQUAL_INT(0, slot->deleted);
+    TEST_ASSERT_EQUAL_INT(key_size, slot->key_size);
+    TEST_ASSERT_EQUAL_INT(data_size, slot->data_size);
+    TEST_ASSERT_EQUAL_INT(218, slot->offset);
+
     page_destroy(page);
 }
 

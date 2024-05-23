@@ -76,6 +76,9 @@ Result page_insert(Page* page, char* key, u32 key_size, char* data, u32 data_siz
 
         index = page->hdr->slot_count++;
         slot = page_get_slot(page, index);
+    } else {
+        slot = page_get_slot(page, index);
+        slot->deleted = 0;
     }
 
     // add slot
